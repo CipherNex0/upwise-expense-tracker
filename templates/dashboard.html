@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logo.svg')}}">
+    </head>
+    <body>
+        <nav class="nav-container">
+            <div class="logo">Upwise.</div>
+            <div class="right-content">
+                <p>Welcome back, {{username | default ('Guest')}}</p>
+                <a href="{{ url_for('logout')}}">Sign Out</a>
+            </div>
+        </nav>
+
+        <section class="summary-row">
+            <div class="summary">
+                <div class="total">
+                    <h4>Total Spent</h4>
+                    <p>${{ total_spent }}</p>
+                </div>
+                <div class="top">
+                    <h4>{{ top_category }}</h4>
+                    <p>Top Category</p>
+                </div>
+                <div class="expense">
+                    <h4>Expenses</h4>
+                    <p>{{ expense_count }} this month</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="visuals">
+            <div class="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+            <div class="data">
+                <div class="filter">
+                    <p>Filter by: </p>
+                    <select name="category" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="Food & Dining">Food & Dining</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Transport & Travel">Transport & Travel</option>
+                        <option value="Personal Care">Personal Care</option>
+                        <option value="Entertainment">Entertainment</option>
+                    </select>
+                </div>
+
+                <div class="table-container">
+                    <table id="expenseTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+
+                            {% for expense in expenses %}
+                            <tr>
+                                <td>{{expense[2]}}</td>
+                                <td>{{ expense[4] }}</td>
+                                <td>{{ expense[3]}}</td>
+                                <td>{{ expense[1] }}</td>
+                            </tr>
+
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="add-new" id="openModalBtn">
+                <button type="button">+ Add Expenses</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h2>Add Expenses</h2>
+                    <button class="modal-close" id="closeModalBtn">&times;</button>
+                </div>
+
+                <form id="newExpenseForm">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter an amount...">
+
+                    <label for="category_id">Category</label>
+                    <select id="category_id" name="category_id">
+                        <option value="1" selected>Food & Dining</option>
+                        <option value="2">Clothing</option>
+                        <option value="3">Transport & Travel</option>
+                        <option value="4">Personal Care</option>
+                        <option value="5">Entertainment</option>
+                    </select>
+
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" placeholder="Enter a date...">
+
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="3" placeholder="Add more details..."></textarea>
+
+                    <button type="submit" class="submit-btn">Add Expense</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            //@ts-nocheck
+            const categoryData = {
+                labels: {{ category_totals | map(attribute=0) | list | tojson }},
+                amounts: {{ category_totals | map(attribute=1) | list | tojson }}
+                };
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    </body>
+</html>

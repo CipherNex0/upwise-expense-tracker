@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Upwise</title>
+        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logo.svg') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    </head>
+    <body>
+        <nav class="nav-container">
+            <div class="logo">Upwise.</div>
+
+            <div class="nav-btn">
+                <a href="{{ url_for('login') }}">Log In</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="left-hero">
+                <h2>Upwise delivers a crisp, data-driven landing page layout for a <span class="highlight">real-time</span> expense tracking management. </h2>
+                <div class="link">
+                    <a href="{{url_for('signup')}}">Get Started</a>
+                </div>
+            </div>
+
+            <div class="right-hero">
+                <img src="{{ url_for('static', filename='images/hea.jpg') }}">
+            </div>
+        </section>
+
+        <section class="marquee-effect">
+            <h2>Join 15 million+ members who trust Upwise.</h2>
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <div class="logo-item" draggable="false">
+                        <img src="{{ url_for('static', filename='images/logo-live.svg')}} ">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-lv2.svg') }}">
+                    </div>   
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-rewire.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-tracktion.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-waveform.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-xing.svg') }}">
+                    </div>
+                </div>
+            
+                <div class="marquee-track">
+                    <div class="logo-item" draggable="false">
+                        <img src="{{ url_for('static', filename='images/logo-live.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-lv2.svg') }}">
+                    </div>   
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-rewire.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-tracktion.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-waveform.svg') }}">
+                    </div>
+
+                    <div class="logo-item">
+                        <img src="{{ url_for('static', filename='images/logo-xing.svg') }}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feat">
+            <div class="feat-header">
+                <h2>Designed to help you work smarter every day.</h2>
+                <p>Plan, focus, track your progress, and stay consistent with tools that adapt to the way you work.</p>
+            </div>
+
+            <div class="feat-grid">
+                <div class="feat-card">
+                    <span class="feat-icon"><img src="{{ url_for('static', filename='images/business-expense.svg') }}"></span>
+                    <h3>Expense Reports</h3>
+                    <p>Submit, review, and approve expenses in seconds. Expensify handles the matching and policy checks.</p>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon"><img src="{{ url_for('static', filename='images/calender.svg') }}"></span>
+                    <h3>Progress</h3>
+                    <p>Control company spend with smart limits, approvals, and visibility across every card and expense.</p>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon"><img src="{{ url_for('static', filename='images/travel-luggage.svg') }}"></span>
+                    <h3>Travel</h3>
+                    <p>Book flights, hotels, cars, and rail right in the app. Every booking syncs with your expenses for total T&E.</p>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon"><img src="{{ url_for('static', filename='images/ai.svg') }}"></span>
+                    <h3>Your AI accountability partner</h3>
+                    <p>Receive personalized suggestions, reminders, and daily guidance based on your progress.</p>
+                </div>
+
+                <div class="feat-card">
+                    <span class="feat-icon"><img src="{{ url_for('static', filename='images/google-calenda.svg') }}"></span>
+                    <h3>Eliminate distractions</h3>
+                    <p>Start distraction-free work sessions using customizable focus timers and deep work modes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="test">
+            <div class="test-header">
+                <span>What Our Users Say</span>
+                <h2>Real peaople, real results.</h2>
+            </div>
+            <div class="test-wrapper">
+                <div class="test-track">
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"Upwise completely changed how I think about money. I used to spend without thinking — now I know exactly where every dollar goes."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">S</div>
+                                <h4>Sarah M.</h4>
+                                <span>Freelance Designer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"I paid off my credit card debt in 6 months after starting to track my expenses with Upwise. The pie chart showing my spending was eye-opening."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">J</div>
+                                <h4>James K.</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★☆</span>
+                            <p>"Simple, clean, and actually useful. I tried three other expense apps before this one — Upwise is the only one I kept using after the first week."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">A</div>
+                                <h4>Amara N.</h4>
+                                <span>Small Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"The categories make it so easy to see I was spending way too much on food and entertainment. Now I actually save money every month."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">T</div>
+                                <h4>Tom R.</h4>
+                                <span>Recent Graduate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"Upwise completely changed how I think about money. I used to spend without thinking — now I know exactly where every dollar goes."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">S</div>
+                                <h4>Sarah M.</h4>
+                                <span>Freelance Designer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"I paid off my credit card debt in 6 months after starting to track my expenses with Upwise. The pie chart showing my spending was eye-opening."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">J</div>
+                                <h4>James K.</h4>
+                                <span>Software Engineer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★☆</span>
+                            <p>"Simple, clean, and actually useful. I tried three other expense apps before this one — Upwise is the only one I kept using after the first week."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">A</div>
+                                <h4>Amara N.</h4>
+                                <span>Small Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="test-grid">
+                        <div class="test-card">
+                            <span class="star">★★★★★</span>
+                            <p>"The categories make it so easy to see I was spending way too much on food and entertainment. Now I actually save money every month."</p>
+                            <div class="test-author">
+                                <div class="auth-avatar">T</div>
+                                <h4>Tom R.</h4>
+                                <span>Recent Graduate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Upwise.</p>
+            </div>
+
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>What is Upwise?</summary>
+                    <p>Upwise is an AI-powered productivity platform designed to help
+                you plan your work, build better habits, and achieve your goals.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is Upwise free?</summary>
+                    <p>
+                Yes. Upwise offers a free plan with essential features, with
+                premium plans available for advanced tools.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I use Upwise on my phone?</summary>
+                    <p> Yes. Upwise is designed to work across desktop, tablet, and
+                mobile devices.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is my information secure?</summary>
+                    <p> Your data is encrypted and protected using industry-standard
+                security practices.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="email-cta">
+            <div class="left-text">
+                <h2>Ready to transform your productivity?</h2>
+                <p>Join thousands of people using Upwise.</p>
+            </div>
+
+            <div class="right-cta">
+                <form class="cta-form" id="cta-form">
+                    <input type="email" id="email" name="email" placeholder="Enter your email...">
+                    <button type="submit">Get started for free</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="footer-top">
+                <a href="#" class="logo-footer">Upwise.</a>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Features</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms & Condition</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Follow Us.</h4>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">X(Twitter)</a>
+                        <a href="#">Youtube</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-brand">
+                <h1>Upwise.</h1>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 Upwise. All rights reserved.</p>
+            </div>
+        </section>
+    </body>
+</html>
